@@ -13,9 +13,6 @@ async function bootstrap() {
 
       /* Lança um erro caso o usuário mande uma chave que não deveria estar em um determinado local */
       forbidNonWhitelisted: true,
-
-      /* Tenta transformar um dado */
-      transform: true,
     }),
   );
 
