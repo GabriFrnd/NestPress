@@ -9,6 +9,6 @@ export class AuthController {
   @Post('login') /* 'login' responde a requisições POST para '/auth/login' */
   /* '@Body()': extrai e injeta os dados do corpo da requisição HTTP */
   login(@Body() loginDto: LoginDto) {
-    return this.authService.metodo(loginDto);
+    return this.authService.login(loginDto);
   }
 }
