@@ -7,6 +7,8 @@ import { UserModule } from 'src/user/user.module';
 import { CommonModule } from 'src/common/common.module';
 import { JwtModule } from '@nestjs/jwt';
 
+import { JwtStrategy } from './jwt.strategy';
+
 @Module({
   imports: [
     UserModule,
@@ -27,7 +29,10 @@ import { JwtModule } from '@nestjs/jwt';
     }),
   ] /* Importação de outros módulos */,
   controllers: [AuthController] /* Controllers pertencentes a este módulo */,
-  providers: [AuthService] /* Providers (serviços) usados neste módulo */,
+  providers: [
+    AuthService,
+    JwtStrategy,
+  ] /* Providers (serviços) usados neste módulo */,
   exports: [] /* Torna estes serviços visíveis para outros módulos */,
 })
 export class AuthModule {}
